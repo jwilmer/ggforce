@@ -8,21 +8,36 @@
 
 <title>Arcs and wedges as polygons — geom_arc_bar • ggforce</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +45,13 @@
 
 
 
-<meta property="og:title" content="Arcs and wedges as polygons — geom_arc_bar" />
 
+<meta property="og:title" content="Arcs and wedges as polygons — geom_arc_bar" />
 <meta property="og:description" content="This set of stats and geoms makes it possible to draw arcs and wedges as
 known from pie and donut charts as well as more specialized plottypes such as
 sunburst plots." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="https://ggforce.data-imaginist.com/logo.svg" />
+
 
 
 
@@ -49,9 +65,10 @@ sunburst plots." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +82,7 @@ sunburst plots." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggforce</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2.9000</span>
       </span>
     </div>
 
@@ -89,6 +106,9 @@ sunburst plots." />
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Release notes</li>
     <li>
+      <a href="https://www.data-imaginist.com/2019/a-flurry-of-facets/">Version 0.3.0</a>
+    </li>
+    <li>
       <a href="https://www.data-imaginist.com/2019/the-ggforce-awakens-again/">Version 0.2.0</a>
     </li>
     <li>
@@ -101,7 +121,6 @@ sunburst plots." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/thomasp85/ggforce">
@@ -116,43 +135,69 @@ sunburst plots." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Arcs and wedges as polygons</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/thomasp85/ggforce/blob/master/R/arc_bar.R'><code>R/arc_bar.R</code></a></small>
     <div class="hidden name"><code>geom_arc_bar.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>This set of stats and geoms makes it possible to draw arcs and wedges as
 known from pie and donut charts as well as more specialized plottypes such as
 sunburst plots.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>stat_arc_bar</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geom</span> <span class='kw'>=</span> <span class='st'>"arc_bar"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>360</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>stat_arc_bar</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  geom <span class='op'>=</span> <span class='st'>"arc_bar"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  n <span class='op'>=</span> <span class='fl'>360</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>stat_pie</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geom</span> <span class='kw'>=</span> <span class='st'>"arc_bar"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>360</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+<span class='fu'>stat_pie</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  geom <span class='op'>=</span> <span class='st'>"arc_bar"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  n <span class='op'>=</span> <span class='fl'>360</span>,
+  sep <span class='op'>=</span> <span class='fl'>0</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>geom_arc_bar</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"arc_bar"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>360</span>, <span class='kw'>expand</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
-    
+<span class='fu'>geom_arc_bar</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"arc_bar"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  n <span class='op'>=</span> <span class='fl'>360</span>,
+  expand <span class='op'>=</span> <span class='fl'>0</span>,
+  radius <span class='op'>=</span> <span class='fl'>0</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>mapping</th>
-      <td><p>Set of aesthetic mappings created by <code>aes()</code> or
-<code>aes_()</code>. If specified and <code>inherit.aes = TRUE</code> (the
+      <td><p>Set of aesthetic mappings created by <code><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes()</a></code> or
+<code><a href='https://ggplot2.tidyverse.org/reference/aes_.html'>aes_()</a></code>. If specified and <code>inherit.aes = TRUE</code> (the
 default), it is combined with the default mapping at the top level of the
 plot. You must supply <code>mapping</code> if there is no plot mapping.</p></td>
     </tr>
@@ -161,13 +206,14 @@ plot. You must supply <code>mapping</code> if there is no plot mapping.</p></td>
       <td><p>The data to be displayed in this layer. There are three
 options:</p>
 <p>If <code>NULL</code>, the default, the data is inherited from the plot
-data as specified in the call to <code>ggplot()</code>.</p>
+data as specified in the call to <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot()</a></code>.</p>
 <p>A <code>data.frame</code>, or other object, will override the plot
 data. All objects will be fortified to produce a data frame. See
-<code>fortify()</code> for which variables will be created.</p>
+<code><a href='https://ggplot2.tidyverse.org/reference/fortify.html'>fortify()</a></code> for which variables will be created.</p>
 <p>A <code>function</code> will be called with a single argument,
 the plot data. The return value must be a <code>data.frame</code>, and
-will be used as the layer data.</p></td>
+will be used as the layer data. A <code>function</code> can be created
+from a <code>formula</code> (e.g. <code>~ head(.x, 10)</code>).</p></td>
     </tr>
     <tr>
       <th>geom</th>
@@ -201,11 +247,11 @@ display.</p></td>
       <td><p>If <code>FALSE</code>, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. <code>borders()</code>.</p></td>
+the default plot specification, e.g. <code><a href='https://ggplot2.tidyverse.org/reference/borders.html'>borders()</a></code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code>layer()</code>. These are
+      <td><p>Other arguments passed on to <code><a href='https://ggplot2.tidyverse.org/reference/layer.html'>layer()</a></code>. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 <code>colour = "red"</code> or <code>size = 3</code>. They may also be parameters
 to the paired geom/stat.</p></td>
@@ -231,7 +277,7 @@ plot area width.</p></td>
       <td><p>As <code>expand</code> but specifying the corner radius.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>An arc bar is the thick version of an arc; that is, a circle segment
@@ -242,11 +288,11 @@ drawn in cartesian space, which allows for transformations not possible with
 the native ggplot2 approach. Most notable of these are the option to explode
 arcs and wedgets away from their center point, thus detaching it from the
 main pie/donut.</p>
-    
     <h2 class="hasAnchor" id="aesthetics"><a class="anchor" href="#aesthetics"></a>Aesthetics</h2>
 
     
-    <p>geom_arc_bar understand the following aesthetics (required aesthetics are in
+
+<p>geom_arc_bar understand the following aesthetics (required aesthetics are in
 bold):</p><ul>
 <li><p><strong>x0</strong></p></li>
 <li><p><strong>y0</strong></p></li>
@@ -262,84 +308,79 @@ bold):</p><ul>
 <li><p>linetype</p></li>
 <li><p>alpha</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="computed-variables"><a class="anchor" href="#computed-variables"></a>Computed variables</h2>
 
     
-    <dl class='dl-horizontal'>
+
+<dl>
 <dt>x, y</dt><dd><p>x and y coordinates for the polygon</p></dd>
+
 </dl>
-    <dl class='dl-horizontal'>
+
+<dl>
 <dt>x, y</dt><dd><p>The start coordinates for the segment</p></dd>
+
 </dl>
-    
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='geom_arc.html'>geom_arc()</a></code> for drawing arcs as lines</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># If you know the angle spans to plot it is easy</span>
-<span class='no'>arcs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(
-  <span class='kw'>start</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>0</span>, <span class='fl'>2</span> * <span class='no'>pi</span>, <span class='kw'>length.out</span> <span class='kw'>=</span> <span class='fl'>11</span>)[-<span class='fl'>11</span>],
-  <span class='kw'>end</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>0</span>, <span class='fl'>2</span> * <span class='no'>pi</span>, <span class='kw'>length.out</span> <span class='kw'>=</span> <span class='fl'>11</span>)[-<span class='fl'>1</span>],
-  <span class='kw'>r</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>1</span>:<span class='fl'>2</span>, <span class='fl'>5</span>)
-)
+<span class='va'>arcs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
+  start <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>2</span> <span class='op'>*</span> <span class='va'>pi</span>, length.out <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span><span class='op'>[</span><span class='op'>-</span><span class='fl'>11</span><span class='op'>]</span>,
+  end <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>2</span> <span class='op'>*</span> <span class='va'>pi</span>, length.out <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span><span class='op'>[</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>]</span>,
+  r <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, <span class='fl'>5</span><span class='op'>)</span>
+<span class='op'>)</span>
 
 <span class='co'># Behold the arcs</span>
-<span class='fu'>ggplot</span>(<span class='no'>arcs</span>) +
-  <span class='fu'>geom_arc_bar</span>(<span class='fu'>aes</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>r0</span> <span class='kw'>=</span> <span class='no'>r</span> - <span class='fl'>1</span>, <span class='kw'>r</span> <span class='kw'>=</span> <span class='no'>r</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='no'>start</span>,
-                   <span class='kw'>end</span> <span class='kw'>=</span> <span class='no'>end</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>r</span>))</div><div class='img'><img src='geom_arc_bar-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>arcs</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_arc_bar</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x0 <span class='op'>=</span> <span class='fl'>0</span>, y0 <span class='op'>=</span> <span class='fl'>0</span>, r0 <span class='op'>=</span> <span class='va'>r</span> <span class='op'>-</span> <span class='fl'>1</span>, r <span class='op'>=</span> <span class='va'>r</span>, start <span class='op'>=</span> <span class='va'>start</span>,
+                   end <span class='op'>=</span> <span class='va'>end</span>, fill <span class='op'>=</span> <span class='va'>r</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='geom_arc_bar-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># geom_arc_bar uses geom_shape to draw the arcs, so you have all the</span>
 <span class='co'># possibilities of that as well, e.g. rounding of corners</span>
-<span class='fu'>ggplot</span>(<span class='no'>arcs</span>) +
-  <span class='fu'>geom_arc_bar</span>(<span class='fu'>aes</span>(<span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>r0</span> <span class='kw'>=</span> <span class='no'>r</span> - <span class='fl'>1</span>, <span class='kw'>r</span> <span class='kw'>=</span> <span class='no'>r</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='no'>start</span>,
-                   <span class='kw'>end</span> <span class='kw'>=</span> <span class='no'>end</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>r</span>), <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'>unit</span>(<span class='fl'>4</span>, <span class='st'>'mm'</span>))</div><div class='img'><img src='geom_arc_bar-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>arcs</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_arc_bar</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x0 <span class='op'>=</span> <span class='fl'>0</span>, y0 <span class='op'>=</span> <span class='fl'>0</span>, r0 <span class='op'>=</span> <span class='va'>r</span> <span class='op'>-</span> <span class='fl'>1</span>, r <span class='op'>=</span> <span class='va'>r</span>, start <span class='op'>=</span> <span class='va'>start</span>,
+                   end <span class='op'>=</span> <span class='va'>end</span>, fill <span class='op'>=</span> <span class='va'>r</span><span class='op'>)</span>, radius <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fl'>4</span>, <span class='st'>'mm'</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='geom_arc_bar-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># If you got values for a pie chart, use stat_pie</span>
-<span class='no'>states</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(
+<span class='va'>states</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
   <span class='st'>'eaten'</span>, <span class='st'>"eaten but said you didn\'t"</span>, <span class='st'>'cat took it'</span>, <span class='st'>'for tonight'</span>,
   <span class='st'>'will decompose slowly'</span>
-)
-<span class='no'>pie</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(
-  <span class='kw'>state</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/factor'>factor</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='no'>states</span>, <span class='fl'>2</span>), <span class='kw'>levels</span> <span class='kw'>=</span> <span class='no'>states</span>),
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'Pie'</span>, <span class='st'>'Donut'</span>), <span class='kw'>each</span> <span class='kw'>=</span> <span class='fl'>5</span>),
-  <span class='kw'>r0</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0.8</span>), <span class='kw'>each</span> <span class='kw'>=</span> <span class='fl'>5</span>),
-  <span class='kw'>focus</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0.2</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>), <span class='fl'>2</span>),
-  <span class='kw'>amount</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>4</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>1.5</span>, <span class='fl'>6</span>, <span class='fl'>6</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>2</span>),
-  <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)
+<span class='op'>)</span>
+<span class='va'>pie</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
+  state <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='va'>states</span>, <span class='fl'>2</span><span class='op'>)</span>, levels <span class='op'>=</span> <span class='va'>states</span><span class='op'>)</span>,
+  type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'Pie'</span>, <span class='st'>'Donut'</span><span class='op'>)</span>, each <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>,
+  r0 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0.8</span><span class='op'>)</span>, each <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>,
+  focus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>, <span class='fl'>2</span><span class='op'>)</span>,
+  amount <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>1.5</span>, <span class='fl'>6</span>, <span class='fl'>6</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>2</span><span class='op'>)</span>,
+  stringsAsFactors <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
 
 <span class='co'># Look at the cakes</span>
-<span class='fu'>ggplot</span>() + <span class='fu'>geom_arc_bar</span>(<span class='fu'>aes</span>(
-  <span class='kw'>x0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>y0</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>r0</span> <span class='kw'>=</span> <span class='no'>r0</span>, <span class='kw'>r</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>amount</span> <span class='kw'>=</span> <span class='no'>amount</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>state</span>, <span class='kw'>explode</span> <span class='kw'>=</span> <span class='no'>focus</span>
-),
-<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>pie</span>, <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>'pie'</span>
-) +
-  <span class='fu'>facet_wrap</span>(~<span class='no'>type</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>) +
-  <span class='fu'>coord_fixed</span>() +
-  <span class='fu'><a href='theme_no_axes.html'>theme_no_axes</a></span>() +
-  <span class='fu'>scale_fill_brewer</span>(<span class='st'>''</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'qual'</span>)</div><div class='img'><img src='geom_arc_bar-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'>geom_arc_bar</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+  x0 <span class='op'>=</span> <span class='fl'>0</span>, y0 <span class='op'>=</span> <span class='fl'>0</span>, r0 <span class='op'>=</span> <span class='va'>r0</span>, r <span class='op'>=</span> <span class='fl'>1</span>, amount <span class='op'>=</span> <span class='va'>amount</span>,
+  fill <span class='op'>=</span> <span class='va'>state</span>, explode <span class='op'>=</span> <span class='va'>focus</span>
+<span class='op'>)</span>,
+data <span class='op'>=</span> <span class='va'>pie</span>, stat <span class='op'>=</span> <span class='st'>'pie'</span>
+<span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>type</span>, ncol <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>coord_fixed</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='theme_no_axes.html'>theme_no_axes</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_fill_brewer</span><span class='op'>(</span><span class='st'>''</span>, type <span class='op'>=</span> <span class='st'>'qual'</span><span class='op'>)</span>
+</div><div class='img'><img src='geom_arc_bar-3.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#aesthetics">Aesthetics</a></li>
-
-      <li><a href="#computed-variables">Computed variables</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -347,13 +388,16 @@ bold):</p><ul>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

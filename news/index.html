@@ -8,21 +8,36 @@
 
 <title>Changelog • ggforce</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,7 +45,10 @@
 
 
 
+
 <meta property="og:title" content="Changelog" />
+<meta property="og:image" content="https://ggforce.data-imaginist.com/logo.svg" />
+
 
 
 
@@ -44,9 +62,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -60,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggforce</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2.9000</span>
       </span>
     </div>
 
@@ -84,6 +103,9 @@
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Release notes</li>
     <li>
+      <a href="https://www.data-imaginist.com/2019/a-flurry-of-facets/">Version 0.3.0</a>
+    </li>
+    <li>
       <a href="https://www.data-imaginist.com/2019/the-ggforce-awakens-again/">Version 0.2.0</a>
     </li>
     <li>
@@ -96,7 +118,6 @@
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/thomasp85/ggforce">
@@ -111,18 +132,73 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/thomasp85/ggforce/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="ggforce-0-2-0" class="section level1">
-<h1 class="page-header">
-<a href="#ggforce-0-2-0" class="anchor"></a>ggforce 0.2.0<small> 2019-03-07 </small>
+    <div id="ggforce-development-version" class="section level1">
+<h1 class="page-header" data-toc-text="development version">
+<a href="#ggforce-development-version" class="anchor"></a>ggforce (development version)<small> Unreleased </small>
+</h1>
+<ul>
+<li>Changed documentation to comply with new units package</li>
+</ul>
+</div>
+    <div id="ggforce-032" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.2">
+<a href="#ggforce-032" class="anchor"></a>ggforce 0.3.2<small> 2020-06-23 </small>
+</h1>
+<ul>
+<li>Changes to comply with latest ggplot2 release</li>
+<li>Make sure ggforce pass test even if concaveman is not available</li>
+</ul>
+</div>
+    <div id="ggforce-031" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.1">
+<a href="#ggforce-031" class="anchor"></a>ggforce 0.3.1<small> 2019-08-20 </small>
+</h1>
+<ul>
+<li>Better fix for gganimate compatibility (<a href='https://github.com/thomasp85/ggforce/issues/157'>#157</a>)</li>
+</ul>
+</div>
+    <div id="ggforce-030" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.0">
+<a href="#ggforce-030" class="anchor"></a>ggforce 0.3.0<small> 2019-08-09 </small>
+</h1>
+<ul>
+<li>Added <code><a href="../reference/facet_matrix.html">facet_matrix()</a></code> in order to facet different data columns into different rows and columns in a grid, in order to make e.g. scatterplot matrices and pairs plot</li>
+<li>Added <code><a href="../reference/geom_autopoint.html">geom_autopoint()</a></code> and <code><a href="../reference/position_auto.html">position_auto()</a></code> to jitter points based on the type of positional scales in the panel</li>
+<li>Added <code><a href="../reference/geom_autodensity.html">geom_autohistogram()</a></code> and <code><a href="../reference/geom_autodensity.html">geom_autodensity()</a></code> for facilitating distribution plots along the diagonal in a <code><a href="../reference/facet_matrix.html">facet_matrix()</a></code> plot.</li>
+<li>Added <code><a href="../reference/facet_row.html">facet_row()</a></code> and <code>facet_col</code> to have one-dimensional <code>facet_wrap()</code> with possibility of variable sizing.</li>
+<li>Stats should now always keep the old group variable (potentially with something added), making them work with gganimate</li>
+<li>Removed the <em>Visual Guide</em> vignette to reduce compilation time. See the website for an overview of all functionality with compiled examples (<a href="https://ggforce.data-imaginist.com" class="uri">https://ggforce.data-imaginist.com</a>)</li>
+</ul>
+</div>
+    <div id="ggforce-022" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.2">
+<a href="#ggforce-022" class="anchor"></a>ggforce 0.2.2<small> 2019-04-23 </small>
+</h1>
+<ul>
+<li>Fixed a regression in <code><a href="../reference/geom_sina.html">geom_sina()</a></code> where the computation would fail with a warning due to <code><a href="https://rdrr.io/r/base/chartr.html">tolower()</a></code> being masked (<a href='https://github.com/thomasp85/ggforce/issues/134'>#134</a>, <a href='https://github.com/thomasp85/ggforce/issues/135'>#135</a>).</li>
+</ul>
+</div>
+    <div id="ggforce-021" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.1">
+<a href="#ggforce-021" class="anchor"></a>ggforce 0.2.1<small> 2019-03-12 </small>
+</h1>
+<ul>
+<li>Fixed a bug in the calculation of open and closed b-splines, where the interval would exceed the defined region and result in an out-of-bounds memory error</li>
+</ul>
+</div>
+    <div id="ggforce-020" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.0">
+<a href="#ggforce-020" class="anchor"></a>ggforce 0.2.0<small> 2019-03-07 </small>
 </h1>
 <div id="new-features" class="section level2">
 <h2 class="hasAnchor">
@@ -152,7 +228,7 @@
 <a href="#improvements" class="anchor"></a>Improvements</h2>
 <ul>
 <li>
-<code>facet_[wrap|grid]_paginate</code> will now try to make panels on the last page the same size as on full pages (#7)</li>
+<code>facet_[wrap|grid]_paginate</code> will now try to make panels on the last page the same size as on full pages (<a href='https://github.com/thomasp85/ggforce/issues/7'>#7</a>)</li>
 <li>
 <code>facet_zoom</code> now gains <code>xlim</code> and <code>ylim</code> arguments to control zoom range directly</li>
 <li>
@@ -181,9 +257,9 @@
 </ul>
 </div>
 </div>
-    <div id="ggforce-0-1-1" class="section level1">
-<h1 class="page-header">
-<a href="#ggforce-0-1-1" class="anchor"></a>ggforce 0.1.1<small> 2016-11-28 </small>
+    <div id="ggforce-011" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.1">
+<a href="#ggforce-011" class="anchor"></a>ggforce 0.1.1<small> 2016-11-28 </small>
 </h1>
 <div id="new-features-1" class="section level2">
 <h2 class="hasAnchor">
@@ -196,16 +272,16 @@
 <h2 class="hasAnchor">
 <a href="#bug-fixes-1" class="anchor"></a>Bug fixes</h2>
 <ul>
-<li>Fix bug in <code>facet_wrap_paginate</code> that threw errors when using it with free scales (#19)</li>
-<li>Fixes bug in <code>facet_zoom</code> where y-axis would be incorrectly displayed when zooming on both axes without splitting the view (#23)</li>
-<li>Fixes bug in <code>facet_zoom</code> where scale expansion where not taken into account when drawing the indicator area (#22)</li>
-<li>Fixes a bug in <code>facet_zoom</code> that would throw errors with layers not containing the column that is zoomed by (#21)</li>
+<li>Fix bug in <code>facet_wrap_paginate</code> that threw errors when using it with free scales (<a href='https://github.com/thomasp85/ggforce/issues/19'>#19</a>)</li>
+<li>Fixes bug in <code>facet_zoom</code> where y-axis would be incorrectly displayed when zooming on both axes without splitting the view (<a href='https://github.com/thomasp85/ggforce/issues/23'>#23</a>)</li>
+<li>Fixes bug in <code>facet_zoom</code> where scale expansion where not taken into account when drawing the indicator area (<a href='https://github.com/thomasp85/ggforce/issues/22'>#22</a>)</li>
+<li>Fixes a bug in <code>facet_zoom</code> that would throw errors with layers not containing the column that is zoomed by (<a href='https://github.com/thomasp85/ggforce/issues/21'>#21</a>)</li>
 </ul>
 </div>
 </div>
-    <div id="ggforce-0-1-0" class="section level1">
-<h1 class="page-header">
-<a href="#ggforce-0-1-0" class="anchor"></a>ggforce 0.1.0<small> 2016-11-22 </small>
+    <div id="ggforce-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#ggforce-010" class="anchor"></a>ggforce 0.1.0<small> 2016-11-22 </small>
 </h1>
 <div id="major-changes" class="section level2">
 <h2 class="hasAnchor">
@@ -236,9 +312,9 @@
 </ul>
 </div>
 </div>
-    <div id="ggforce-0-0-1" class="section level1">
-<h1 class="page-header">
-<a href="#ggforce-0-0-1" class="anchor"></a>ggforce 0.0.1<small> Unreleased </small>
+    <div id="ggforce-001" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.1">
+<a href="#ggforce-001" class="anchor"></a>ggforce 0.0.1<small> Unreleased </small>
 </h1>
 <div id="major-changes-1" class="section level2">
 <h2 class="hasAnchor">
@@ -270,19 +346,14 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#ggforce-0-2-0">0.2.0</a></li>
-        <li><a href="#ggforce-0-1-1">0.1.1</a></li>
-        <li><a href="#ggforce-0-1-0">0.1.0</a></li>
-        <li><a href="#ggforce-0-0-1">0.0.1</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -290,13 +361,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

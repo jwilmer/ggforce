@@ -8,21 +8,36 @@
 
 <title>Voronoi tesselation and delaunay triangulation — geom_voronoi • ggforce</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,13 +45,14 @@
 
 
 
-<meta property="og:title" content="Voronoi tesselation and delaunay triangulation — geom_voronoi" />
 
+<meta property="og:title" content="Voronoi tesselation and delaunay triangulation — geom_voronoi" />
 <meta property="og:description" content="This set of geoms and stats allows you to display voronoi tesselation and
 delaunay triangulation, both as polygons and as line segments. Furthermore
 it lets you augment your point data with related summary statistics. The
 computations are based on the deldir::deldir() package." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="https://ggforce.data-imaginist.com/logo.svg" />
+
 
 
 
@@ -50,9 +66,10 @@ computations are based on the deldir::deldir() package." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -66,7 +83,7 @@ computations are based on the deldir::deldir() package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ggforce</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2.9000</span>
       </span>
     </div>
 
@@ -90,6 +107,9 @@ computations are based on the deldir::deldir() package." />
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Release notes</li>
     <li>
+      <a href="https://www.data-imaginist.com/2019/a-flurry-of-facets/">Version 0.3.0</a>
+    </li>
+    <li>
       <a href="https://www.data-imaginist.com/2019/the-ggforce-awakens-again/">Version 0.2.0</a>
     </li>
     <li>
@@ -102,7 +122,6 @@ computations are based on the deldir::deldir() package." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/thomasp85/ggforce">
@@ -117,63 +136,127 @@ computations are based on the deldir::deldir() package." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Voronoi tesselation and delaunay triangulation</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/thomasp85/ggforce/blob/master/R/voronoi.R'><code>R/voronoi.R</code></a></small>
     <div class="hidden name"><code>geom_delvor.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>This set of geoms and stats allows you to display voronoi tesselation and
 delaunay triangulation, both as polygons and as line segments. Furthermore
 it lets you augment your point data with related summary statistics. The
-computations are based on the <code><a href='https://www.rdocumentation.org/packages/deldir/topics/deldir'>deldir::deldir()</a></code> package.</p>
-    
+computations are based on the <code><a href='https://rdrr.io/pkg/deldir/man/deldir.html'>deldir::deldir()</a></code> package.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geom_voronoi_tile</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"voronoi_tile"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>,
-  <span class='kw'>max.radius</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>expand</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>geom_voronoi_tile</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"voronoi_tile"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  max.radius <span class='op'>=</span> <span class='cn'>NULL</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  expand <span class='op'>=</span> <span class='fl'>0</span>,
+  radius <span class='op'>=</span> <span class='fl'>0</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>geom_voronoi_segment</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"voronoi_segment"</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+<span class='fu'>geom_voronoi_segment</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"voronoi_segment"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>geom_delaunay_tile</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"delaunay_tile"</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>expand</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>...</span>)
+<span class='fu'>geom_delaunay_tile</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"delaunay_tile"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  expand <span class='op'>=</span> <span class='fl'>0</span>,
+  radius <span class='op'>=</span> <span class='fl'>0</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>geom_delaunay_segment</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"delaunay_segment"</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+<span class='fu'>geom_delaunay_segment</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"delaunay_segment"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>geom_delaunay_segment2</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>"delaunay_segment2"</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>, <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)
+<span class='fu'>geom_delaunay_segment2</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  stat <span class='op'>=</span> <span class='st'>"delaunay_segment2"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  n <span class='op'>=</span> <span class='fl'>100</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>stat_delvor_summary</span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>geom</span> <span class='kw'>=</span> <span class='st'>"point"</span>,
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='st'>"identity"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>bound</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1e-09</span>,
-  <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>asp.ratio</span> <span class='kw'>=</span> <span class='no'>asp.ratio</span>, <span class='kw'>show.legend</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>inherit.aes</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
-    
+<span class='fu'>stat_delvor_summary</span><span class='op'>(</span>
+  mapping <span class='op'>=</span> <span class='cn'>NULL</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  geom <span class='op'>=</span> <span class='st'>"point"</span>,
+  position <span class='op'>=</span> <span class='st'>"identity"</span>,
+  na.rm <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bound <span class='op'>=</span> <span class='cn'>NULL</span>,
+  eps <span class='op'>=</span> <span class='fl'>1e-09</span>,
+  normalize <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  asp.ratio <span class='op'>=</span> <span class='va'>asp.ratio</span>,
+  show.legend <span class='op'>=</span> <span class='cn'>NA</span>,
+  inherit.aes <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>mapping</th>
-      <td><p>Set of aesthetic mappings created by <code>aes()</code> or
-<code>aes_()</code>. If specified and <code>inherit.aes = TRUE</code> (the
+      <td><p>Set of aesthetic mappings created by <code><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes()</a></code> or
+<code><a href='https://ggplot2.tidyverse.org/reference/aes_.html'>aes_()</a></code>. If specified and <code>inherit.aes = TRUE</code> (the
 default), it is combined with the default mapping at the top level of the
 plot. You must supply <code>mapping</code> if there is no plot mapping.</p></td>
     </tr>
@@ -182,13 +265,14 @@ plot. You must supply <code>mapping</code> if there is no plot mapping.</p></td>
       <td><p>The data to be displayed in this layer. There are three
 options:</p>
 <p>If <code>NULL</code>, the default, the data is inherited from the plot
-data as specified in the call to <code>ggplot()</code>.</p>
+data as specified in the call to <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot()</a></code>.</p>
 <p>A <code>data.frame</code>, or other object, will override the plot
 data. All objects will be fortified to produce a data frame. See
-<code>fortify()</code> for which variables will be created.</p>
+<code><a href='https://ggplot2.tidyverse.org/reference/fortify.html'>fortify()</a></code> for which variables will be created.</p>
 <p>A <code>function</code> will be called with a single argument,
 the plot data. The return value must be a <code>data.frame</code>, and
-will be used as the layer data.</p></td>
+will be used as the layer data. A <code>function</code> can be created
+from a <code>formula</code> (e.g. <code>~ head(.x, 10)</code>).</p></td>
     </tr>
     <tr>
       <th>stat</th>
@@ -209,7 +293,7 @@ a warning. If <code>TRUE</code>, missing values are silently removed.</p></td>
       <th>bound</th>
       <td><p>The bounding rectangle for the tesselation or a custom polygon
 to clip the tesselation to. Defaults to <code>NULL</code> which creates a rectangle
-expanded 10% in all directions. If supplied as a bounding box it should be a
+expanded 10\<!-- % in all directions. If supplied as a bounding box it should be a -->
 vector giving the bounds in the following order: xmin, xmax, ymin, ymax. If
 supplied as a polygon it should either be a 2-column matrix or a data.frame
 containing an <code>x</code> and <code>y</code> column.</p></td>
@@ -265,11 +349,11 @@ display.</p></td>
       <td><p>If <code>FALSE</code>, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. <code>borders()</code>.</p></td>
+the default plot specification, e.g. <code><a href='https://ggplot2.tidyverse.org/reference/borders.html'>borders()</a></code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code>layer()</code>. These are
+      <td><p>Other arguments passed on to <code><a href='https://ggplot2.tidyverse.org/reference/layer.html'>layer()</a></code>. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 <code>colour = "red"</code> or <code>size = 3</code>. They may also be parameters
 to the paired geom/stat.</p></td>
@@ -283,11 +367,12 @@ to the paired geom/stat.</p></td>
       <td><p>The geometric object to use display the data</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="aesthetics"><a class="anchor" href="#aesthetics"></a>Aesthetics</h2>
 
     
-    <p>geom_voronoi_tile and geom_delaunay_tile understand the following aesthetics
+
+<p>geom_voronoi_tile and geom_delaunay_tile understand the following aesthetics
 (required aesthetics are in bold):</p><ul>
 <li><p><strong>x</strong></p></li>
 <li><p><strong>y</strong></p></li>
@@ -297,7 +382,8 @@ to the paired geom/stat.</p></td>
 <li><p>linetype</p></li>
 <li><p>size</p></li>
 </ul>
-    <p>geom_voronoi_segment, geom_delaunay_segment, and geom_delaunay_segment2
+
+<p>geom_voronoi_segment, geom_delaunay_segment, and geom_delaunay_segment2
 understand the following aesthetics (required aesthetics are in bold):</p><ul>
 <li><p><strong>x</strong></p></li>
 <li><p><strong>y</strong></p></li>
@@ -306,11 +392,12 @@ understand the following aesthetics (required aesthetics are in bold):</p><ul>
 <li><p>linetype</p></li>
 <li><p>size</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="computed-variables"><a class="anchor" href="#computed-variables"></a>Computed variables</h2>
 
     
-    <p>stat_delvor_summary computes the following variables:</p><dl class='dl-horizontal'>
+
+<p>stat_delvor_summary computes the following variables:</p><dl>
 <dt>x, y</dt><dd><p>If <code>switch.centroid = TRUE</code> this will be the coordinates for
 the voronoi tile centroid, otherwise it is the original point</p></dd>
 <dt>xcent, ycent</dt><dd><p>If <code>switch.centroid = FALSE</code> this will be the
@@ -327,57 +414,58 @@ triangles</p></dd>
 the bounding box</p></dd>
 <dt>vorarea</dt><dd><p>The area of the voronoi tile associated with the point</p></dd>
 <dt>vorprop</dt><dd><p><code>vorarea</code> divided by the sum of all voronoi tiles</p></dd>
+
 </dl>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Voronoi</span>
 <span class='co'># You usually wants all points to take part in the same tesselation so set</span>
 <span class='co'># the group aesthetic to a constant (-1L is just a convention)</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1L</span>)) +
-  <span class='fu'>geom_voronoi_tile</span>(<span class='fu'>aes</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>Species</span>)) +
-  <span class='fu'>geom_voronoi_segment</span>() +
-  <span class='fu'>geom_text</span>(<span class='fu'>aes</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>stat</span>(<span class='no'>nsides</span>), <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>stat</span>(<span class='no'>vorarea</span>)),
-    <span class='kw'>stat</span> <span class='kw'>=</span> <span class='st'>'delvor_summary'</span>, <span class='kw'>switch.centroid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-  )</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_segment: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delvor_summary: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1L</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_tile</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_segment</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_text</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>label <span class='op'>=</span> <span class='fu'>stat</span><span class='op'>(</span><span class='va'>nsides</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fu'>stat</span><span class='op'>(</span><span class='va'>vorarea</span><span class='op'>)</span><span class='op'>)</span>,
+    stat <span class='op'>=</span> <span class='st'>'delvor_summary'</span>, switch.centroid <span class='op'>=</span> <span class='cn'>TRUE</span>
+  <span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_segment: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delvor_summary: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Difference of normalize = TRUE (segment layer is calculated without</span>
 <span class='co'># normalisation)</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1L</span>)) +
-  <span class='fu'>geom_voronoi_tile</span>(<span class='fu'>aes</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>Species</span>), <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) +
-  <span class='fu'>geom_voronoi_segment</span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_segment: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1L</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_tile</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span>, normalize <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_segment</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_segment: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Set a max radius</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1L</span>)) +
-  <span class='fu'>geom_voronoi_tile</span>(<span class='fu'>aes</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>Species</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>'black'</span>, <span class='kw'>max.radius</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1L</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_tile</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>'black'</span>, max.radius <span class='op'>=</span> <span class='fl'>0.25</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Set custom bounding polygon</span>
-<span class='no'>triangle</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/cbind'>cbind</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>3</span>, <span class='fl'>9</span>, <span class='fl'>6</span>), <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>6</span>))
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1L</span>)) +
-  <span class='fu'>geom_voronoi_tile</span>(<span class='fu'>aes</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>Species</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>'black'</span>, <span class='kw'>bound</span> <span class='kw'>=</span> <span class='no'>triangle</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='va'>triangle</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span>, <span class='fl'>9</span>, <span class='fl'>6</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>6</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1L</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_tile</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>'black'</span>, bound <span class='op'>=</span> <span class='va'>triangle</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Use geom_shape functionality to round corners etc</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1L</span>)) +
-  <span class='fu'>geom_voronoi_tile</span>(<span class='fu'>aes</span>(<span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>Species</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>'black'</span>,
-                    <span class='kw'>expand</span> <span class='kw'>=</span> <span class='fu'>unit</span>(-<span class='fl'>.5</span>, <span class='st'>'mm'</span>), <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fu'>unit</span>(<span class='fl'>2</span>, <span class='st'>'mm'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-5.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1L</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_voronoi_tile</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>'black'</span>,
+                    expand <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='op'>-</span><span class='fl'>.5</span>, <span class='st'>'mm'</span><span class='op'>)</span>, radius <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fl'>2</span>, <span class='st'>'mm'</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_voronoi_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-5.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Delaunay triangles</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>)) +
-  <span class='fu'>geom_delaunay_tile</span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.3</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>'black'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delaunay_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-6.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_delaunay_tile</span><span class='op'>(</span>alpha <span class='op'>=</span> <span class='fl'>0.3</span>, colour <span class='op'>=</span> <span class='st'>'black'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delaunay_tile: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-6.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Use geom_delauney_segment2 to interpolate aestetics between end points</span>
-<span class='fu'>ggplot</span>(<span class='no'>iris</span>, <span class='fu'>aes</span>(<span class='no'>Sepal.Length</span>, <span class='no'>Sepal.Width</span>)) +
-  <span class='fu'>geom_delaunay_segment2</span>(<span class='fu'>aes</span>(<span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Species</span>, <span class='kw'>group</span> <span class='kw'>=</span> -<span class='fl'>1</span>), <span class='kw'>size</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-                         <span class='kw'>lineend</span> <span class='kw'>=</span> <span class='st'>'round'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delaunay_segment2: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-7.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>iris</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='va'>Sepal.Length</span>, <span class='va'>Sepal.Width</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_delaunay_segment2</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>colour <span class='op'>=</span> <span class='va'>Species</span>, group <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fl'>2</span>,
+                         lineend <span class='op'>=</span> <span class='st'>'round'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: stat_delaunay_segment2: dropping duplicated points</span></div><div class='img'><img src='geom_delvor-7.png' alt='' width='700' height='433' /></div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#aesthetics">Aesthetics</a></li>
-
-      <li><a href="#computed-variables">Computed variables</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -385,13 +473,16 @@ the bounding box</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
