@@ -225,7 +225,7 @@ StatSina <- ggproto('StatSina', Stat,
 
     # jitter y values if the input is input is integer
     if (all(data$y == floor(data$y))) {
-      data$y <- jitter(data$y)
+      #data$y <- jitter(data$y)
     }
 
     data
